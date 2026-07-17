@@ -2,7 +2,7 @@ import Link from "next/link";
 import Container from "@/components/Container";
 import ChapterCard from "@/components/ChapterCard";
 import NewsletterForm from "@/components/NewsletterForm";
-
+import HomePagePhotos from "@/components/HomePagePhotos";
 export default function HomePage() {
   return (
     <>
@@ -25,7 +25,7 @@ export default function HomePage() {
           </p>
         </Container>
       </section>
-
+      <HomePagePhotos />
       <section>
         <Container className="grid gap-6 py-16 sm:grid-cols-2 sm:py-20">
           <ChapterCard
