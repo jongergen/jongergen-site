@@ -1,27 +1,42 @@
+
 import { NextResponse } from "next/server";
+
+// Kit form "jongergen.com signup"
+const KIT_FORM_URL = "https://app.kit.com/forms/9962968/subscriptions";
 
 export async function POST(request: Request) {
   const { email } = await request.json();
 
-  if (!email) {
+  if (!email || typeof email !== "string") {
     return NextResponse.json({ error: "Missing email" }, { status: 400 });
   }
 
-  // TODO: add this email to a real list. Popular free-tier options:
-  // - ConvertKit (creator-focused, good for authors)
-  // - Mailchimp
-  // - Buttondown (simple, developer-friendly)
-  //
-  // Each provider has an API you call here with a server-side API key
-  // stored in a Vercel environment variable. Example shape for ConvertKit:
-  //
-  // await fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify({ api_key: process.env.CONVERTKIT_API_KEY, email }),
-  // });
+  try {
+    const res = await fetch(KIT_FORM_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Accept: "application/json",
+      },
+      body: new URLSearchParams({ email_address: email }).toString(),
+    });
 
-  console.log("Newsletter signup:", email);
+    const text = await res.text();
+    let data: { status?: string } | null = null;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      data = null;
+    }
 
-  return NextResponse.json({ ok: true });
+    if (!res.ok || (data && data.status && data.status !== "success")) {
+      console.error("Kit signup failed:", res.status, text.slice(0, 500));
+      return NextResponse.json({ error: "Signup failed" }, { status: 502 });
+    }
+
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error("Kit signup error:", err);
+    return NextResponse.json({ error: "Signup failed" }, { status: 502 });
+  }
 }
