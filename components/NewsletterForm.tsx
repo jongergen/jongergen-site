@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -28,7 +29,8 @@ export default function NewsletterForm() {
   if (status === "success") {
     return (
       <p className="font-body text-ink-muted">
-        You&apos;re on the list. Thanks for signing up.
+        Almost there &mdash; check your inbox for an email to confirm your
+        subscription.
       </p>
     );
   }
@@ -61,7 +63,7 @@ export default function NewsletterForm() {
       </button>
       {status === "error" && (
         <p className="font-utility text-sm text-red-700 sm:basis-full">
-          Something went wrong. Please try again in a moment.
+          Something went wrong. Please try again, or email jon@jongergen.com.
         </p>
       )}
     </form>
