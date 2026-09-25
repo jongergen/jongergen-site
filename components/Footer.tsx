@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 
 export default function Footer() {
@@ -14,10 +15,9 @@ export default function Footer() {
                 Contact
               </Link>
             </li>
-            {/* TODO: swap in real profile URLs, or remove any you don't use */}
             <li>
               <a
-                href="https://instagram.com/"
+                href="https://instagram.com/gergenjon"
                 className="hover:text-cloth"
                 target="_blank"
                 rel="noreferrer"
@@ -27,10 +27,10 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="mailto:hello@jongergen.com"
+                href="mailto:jon@jongergen.com"
                 className="hover:text-cloth"
               >
-                hello@jongergen.com
+                jon@jongergen.com
               </a>
             </li>
           </ul>
