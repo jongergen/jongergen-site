@@ -1,32 +1,23 @@
-
 "use client";
 
 import { useState } from "react";
 
+/*
+  NEWSLETTER SIGNUP
+  ------------------------
+  Posts straight from the visitor's browser to Jon's Kit form
+  ("jongergen.com signup", form 9962968). The response loads into a
+  hidden frame, so the visitor stays on the page and sees our own
+  confirmation message instead of Kit's.
+*/
+
+const KIT_FORM_URL = "https://app.kit.com/forms/9962968/subscriptions";
+const FRAME_NAME = "kit-signup-frame";
+
 export default function NewsletterForm() {
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
-  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      if (!res.ok) throw new Error("Request failed");
-      setStatus("success");
-      setEmail("");
-    } catch {
-      setStatus("error");
-    }
-  }
-
-  if (status === "success") {
+  if (submitted) {
     return (
       <p className="font-body text-ink-muted">
         Almost there &mdash; check your inbox for an email to confirm your
@@ -36,36 +27,42 @@ export default function NewsletterForm() {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col gap-3 sm:flex-row sm:items-start"
-    >
-      <div className="flex-1">
-        <label htmlFor="email" className="sr-only">
+    <>
+      <form
+        action={KIT_FORM_URL}
+        method="post"
+        target={FRAME_NAME}
+        onSubmit={() => {
+          // Let the browser send the form first, then swap in the message.
+          setTimeout(() => setSubmitted(true), 300);
+        }}
+        className="flex flex-col gap-3 sm:flex-row sm:items-start"
+      >
+        <label htmlFor="email_address" className="sr-only">
           Email address
         </label>
         <input
-          id="email"
+          id="email_address"
+          name="email_address"
           type="email"
           required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
           placeholder="name@email.com"
-          className="w-full rounded-sm border border-ink/20 bg-paper px-4 py-3 font-body text-ink placeholder:text-ink-faint"
+          className="w-full min-w-0 flex-1 rounded-sm border border-ink/20 bg-paper px-4 py-3 font-body text-ink placeholder:text-ink-faint"
         />
-      </div>
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="whitespace-nowrap rounded-sm bg-cloth px-6 py-3 font-utility text-sm font-medium text-paper transition-colors hover:bg-cloth-dark disabled:opacity-60"
-      >
-        {status === "loading" ? "Signing up…" : "Sign up"}
-      </button>
-      {status === "error" && (
-        <p className="font-utility text-sm text-red-700 sm:basis-full">
-          Something went wrong. Please try again, or email jon@jongergen.com.
-        </p>
-      )}
-    </form>
+        <button
+          type="submit"
+          className="whitespace-nowrap rounded-sm bg-cloth px-6 py-3 font-utility text-sm font-medium text-paper transition-colors hover:bg-cloth-dark"
+        >
+          Sign up
+        </button>
+      </form>
+      <iframe
+        name={FRAME_NAME}
+        title="Newsletter signup"
+        aria-hidden="true"
+        tabIndex={-1}
+        style={{ position: "absolute", width: 0, height: 0, border: 0 }}
+      />
+    </>
   );
 }
