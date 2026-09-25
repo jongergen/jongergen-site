@@ -1,4 +1,5 @@
 
+
 import Link from "next/link";
 
 const bookLinks = [
@@ -10,15 +11,15 @@ const bookLinks = [
 export default function Header() {
   return (
     <header className="border-b border-ink/10">
-      <div className="mx-auto flex max-w-page items-center justify-between px-6 py-6 sm:px-10">
+      <div className="mx-auto flex max-w-page flex-col items-start gap-4 px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-8">
         <Link
           href="/"
-          className="font-display text-xl tracking-tight text-ink"
+          className="font-display text-3xl font-semibold tracking-tight text-cloth sm:text-4xl"
         >
           Jon Gergen
         </Link>
         <nav aria-label="Primary">
-          <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 font-utility text-sm text-ink-muted">
+          <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 font-utility text-base font-medium text-ink sm:gap-x-8 sm:text-lg">
             <li>
               <details className="group relative">
                 <summary className="cursor-pointer list-none transition-colors hover:text-cloth [&::-webkit-details-marker]:hidden">
@@ -27,7 +28,7 @@ export default function Header() {
                     &#9662;
                   </span>
                 </summary>
-                <ul className="absolute left-0 top-full z-10 mt-3 min-w-[200px] rounded-sm border border-ink/10 bg-paper py-2 shadow-sm">
+                <ul className="absolute left-0 top-full z-10 mt-3 min-w-[240px] rounded-sm border border-ink/10 bg-paper py-2 shadow-sm">
                   {bookLinks.map((link) => (
                     <li key={link.href}>
                       <Link
