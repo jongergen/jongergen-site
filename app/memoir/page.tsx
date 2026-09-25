@@ -1,9 +1,11 @@
+
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 
 export const metadata: Metadata = {
-  title: "The memoir",
-  description: "About Jon Gergen's forthcoming memoir.",
+  title: "The Lummi Tabernacle Choir",
+  description:
+    "The Lummi Tabernacle Choir, a literary memoir by Jon Gergen about ten years on Gooseberry Point on the Lummi Reservation.",
 };
 
 export default function MemoirPage() {
@@ -15,32 +17,32 @@ export default function MemoirPage() {
           <p className="font-utility text-xs uppercase tracking-[0.15em] text-ink-faint">
             Chapter one
           </p>
-          {/* TODO: replace with your real memoir title */}
           <h1 className="mt-3 font-display text-3xl text-ink sm:text-4xl">
-            Memoir title goes here
+            The Lummi Tabernacle Choir
           </h1>
-          {/* TODO: replace with your real status */}
           <p className="mt-3 font-utility text-sm text-cloth">
-            Status: nearing completion &middot; seeking representation
+            A literary memoir
           </p>
 
-          {/* TODO: replace with your real synopsis, a few paragraphs */}
           <div className="mt-8 space-y-4 font-body text-lg text-ink-muted">
             <p>
-              This is a placeholder synopsis. Describe the arc of the
-              memoir in a few paragraphs: where it begins, the central
-              tension or question that drives it, and what a reader walks
-              away understanding by the end.
+              On Gooseberry Point, whenever a siren wailed down the road, every
+              dog in the neighborhood lifted its head and answered. They were
+              the Lummi Tabernacle Choir, and for ten years they were the
+              soundtrack to Jon Gergen&apos;s life on the Lummi Reservation.
             </p>
             <p>
-              Many memoir synopses work well by naming the time period or
-              setting, the central relationships involved, and the stakes
-              &mdash; what was actually at risk, emotionally or otherwise.
+              He found himself in the company of Ben, Wayne, Joe, Hungarian
+              Mike, a man everyone knew only as Spider-Man, and Skip &mdash;
+              fishermen, drifters, and the closest thing he had to fathers.
+              And there was Arlo, a dog as fiercely independent as any of
+              them.
             </p>
             <p>
-              If you&apos;re sharing this page with an agent or publisher,
-              you may want a shorter, sharper version of this text at the
-              top, with the fuller synopsis below it.
+              <em>The Lummi Tabernacle Choir</em> is a book about an accidental
+              community, the strange grace of being taken in, and the harder
+              question of whether you can stay somewhere that has already
+              accepted you.
             </p>
           </div>
 
