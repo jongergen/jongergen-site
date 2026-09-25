@@ -1,5 +1,7 @@
+
 import type { Metadata } from "next";
 import Container from "@/components/Container";
+import PhotoSlot from "@/components/PhotoSlot";
 
 export const metadata: Metadata = {
   title: "About",
@@ -10,9 +12,25 @@ export default function AboutPage() {
   return (
     <Container className="py-16 sm:py-24">
       <div className="grid gap-12 sm:grid-cols-[240px_1fr] sm:gap-16">
-        <div>
-          {/* TODO: replace with a real author photo in /public and swap this div for an <Image /> */}
-          <div className="aspect-[4/5] w-full rounded-sm bg-paper-dim" />
+        <div className="flex flex-col gap-6">
+          <div className="aspect-[4/5] w-full overflow-hidden rounded-sm shadow-md">
+            <PhotoSlot
+              src="/images/home-page-left.jpg"
+              alt="Jon Gergen"
+              width={480}
+              height={600}
+              priority
+            />
+          </div>
+          <div className="aspect-[4/5] w-full overflow-hidden rounded-sm shadow-md">
+            <PhotoSlot
+              src="/images/home-page-right.jpg"
+              alt="Jon Gergen in a festive crown"
+              width={480}
+              height={600}
+              className="object-top"
+            />
+          </div>
         </div>
         <div className="max-w-prose">
           <h1 className="font-display text-3xl text-ink sm:text-4xl">
