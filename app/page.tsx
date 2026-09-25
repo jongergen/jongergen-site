@@ -1,6 +1,7 @@
 
 
 
+
 import Link from "next/link";
 import Container from "@/components/Container";
 import ChapterCard from "@/components/ChapterCard";
@@ -8,6 +9,7 @@ import HomePagePhotos from "@/components/HomePagePhotos";
 export default function HomePage() {
   return (
     <>
+      <HomePagePhotos />
       <section className="border-b border-ink/10">
         <Container className="py-20 sm:py-28">
           <p className="font-utility text-xs uppercase tracking-[0.2em] text-ink-faint">
@@ -34,7 +36,6 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
-      <HomePagePhotos />
       <section>
         <Container className="grid gap-6 py-16 sm:grid-cols-2 sm:py-20">
           <ChapterCard
