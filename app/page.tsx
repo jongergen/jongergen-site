@@ -39,14 +39,14 @@ export default function HomePage() {
       <section>
         <Container className="grid gap-6 py-16 sm:grid-cols-2 sm:py-20">
           <ChapterCard
-            eyebrow="Chapter one"
+            eyebrow="Literary memoir"
             title="The Lummi Tabernacle Choir"
             description="Ten years, one peninsula, and a neighborhood of dogs who howled back at every siren that passed."
             href="/memoir"
             cta="Read more"
           />
           <ChapterCard
-            eyebrow="Chapter two"
+            eyebrow="Children's series"
             title="Gene Drives"
             description="Gene can drive anything, and when someone's lost, stuck, or far from home, he's the one who goes to get them."
             href="/childrens-series"
@@ -67,8 +67,9 @@ export default function HomePage() {
             </Link>
           </h2>
           <p className="mt-3 max-w-prose font-body text-lg text-ink-muted">
-            A novel in progress about a girl who spends her life searching for
-            the love, belonging, and God she believes she lost.
+            A novel in progress about a girl searching for the love, belonging,
+            and God she believes she lost &mdash; and a diary that may change
+            what she understands about all three.
           </p>
         </Container>
       </section>
