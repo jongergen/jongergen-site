@@ -1,6 +1,6 @@
+
 import type { Metadata } from "next";
 import Container from "@/components/Container";
-import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -15,16 +15,15 @@ export default function ContactPage() {
           Get in touch
         </h1>
         <p className="mt-4 font-body text-lg text-ink-muted">
-          For agents, publishers, press, schools, or readers &mdash; use the
-          form below, or email{" "}
-          <a href="mailto:hello@jongergen.com" className="text-cloth hover:underline">
-            hello@jongergen.com
-          </a>{" "}
-          directly.
+          For agents, publishers, press, schools, or readers, email me at{" "}
+          <a
+            href="mailto:jon@jongergen.com"
+            className="text-cloth hover:underline"
+          >
+            jon@jongergen.com
+          </a>
+          .
         </p>
-        <div className="mt-10">
-          <ContactForm />
-        </div>
       </div>
     </Container>
   );
