@@ -1,27 +1,23 @@
 import PhotoSlot from "./PhotoSlot";
 
 /*
-  HOME PAGE PHOTO LAYOUT
+  HOME PAGE HERO
   ------------------------
-  Single hero image (upload to /public/images/):
-    home-page-center.jpg   (LANDSCAPE — wider than tall)
-
-  The two small author photos that used to sit in the corners now live
-  on the About page.
+  One full-width banner photo at the top of the home page.
+  File (upload to /public/images/):
+    home-hero.jpg   (wide landscape, about 2:1)
 */
 
 export default function HomePagePhotos() {
   return (
-    <div className="w-full max-w-5xl mx-auto px-6 py-12">
-      <div className="w-full rounded-lg overflow-hidden shadow-xl">
-        <PhotoSlot
-          src="/images/home-page-center.jpg"
-          alt="Sunrise over the water and mountains"
-          width={1200}
-          height={700}
-          priority
-        />
-      </div>
+    <div className="relative h-[42vh] min-h-[260px] w-full overflow-hidden sm:h-[60vh] sm:max-h-[720px]">
+      <PhotoSlot
+        src="/images/home-hero.jpg"
+        alt="A fishing rod bent against a sunrise over the water"
+        width={1920}
+        height={960}
+        priority
+      />
     </div>
   );
 }
