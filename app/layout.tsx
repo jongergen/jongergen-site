@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Fraunces, Source_Serif_4, Inter } from "next/font/google";
 import Header from "@/components/Header";
@@ -30,11 +31,11 @@ export const metadata: Metadata = {
     template: "%s | Jon Gergen",
   },
   description:
-    "Jon Gergen is the author of a forthcoming memoir and a ten-book children's series.",
+    "Jon Gergen is the author of The Lummi Tabernacle Choir, a literary memoir, and Gene Drives, a ten-book children's series.",
   openGraph: {
     title: "Jon Gergen — Author",
     description:
-      "Jon Gergen is the author of a forthcoming memoir and a ten-book children's series.",
+      "Jon Gergen is the author of The Lummi Tabernacle Choir, a literary memoir, and Gene Drives, a ten-book children's series.",
     url: "https://jongergen.com",
     siteName: "Jon Gergen",
     type: "website",
