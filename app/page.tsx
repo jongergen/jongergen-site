@@ -1,9 +1,9 @@
 
 
+
 import Link from "next/link";
 import Container from "@/components/Container";
 import ChapterCard from "@/components/ChapterCard";
-import NewsletterForm from "@/components/NewsletterForm";
 import HomePagePhotos from "@/components/HomePagePhotos";
 export default function HomePage() {
   return (
@@ -89,24 +89,6 @@ export default function HomePage() {
             Shorter writing &mdash; notes, observations, and the occasional
             story from the farm.
           </p>
-        </Container>
-      </section>
-
-      <section className="border-t border-ink/10 bg-paper-dim/40">
-        <Container className="py-16 sm:py-20">
-          <div className="max-w-xl">
-            <h2 className="font-display text-2xl text-ink sm:text-3xl">
-              Stay in the loop
-            </h2>
-            <p className="mt-3 font-body text-ink-muted">
-              Occasional updates on the memoir&apos;s progress, the
-              children&apos;s series, and news about events or releases. No
-              spam, unsubscribe anytime.
-            </p>
-            <div className="mt-6">
-              <NewsletterForm />
-            </div>
-          </div>
         </Container>
       </section>
     </>
