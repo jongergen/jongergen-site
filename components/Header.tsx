@@ -1,6 +1,7 @@
 
 
 
+
 import Link from "next/link";
 
 const bookLinks = [
@@ -12,15 +13,15 @@ const bookLinks = [
 export default function Header() {
   return (
     <header className="border-b border-ink/10">
-      <div className="mx-auto flex max-w-page flex-col items-start gap-4 px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-8">
+      <div className="mx-auto flex max-w-page flex-col items-start gap-4 px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-10">
         <Link
           href="/"
-          className="font-display text-3xl font-semibold tracking-tight text-cloth sm:text-4xl"
+          className="font-display text-4xl font-semibold tracking-tight text-cloth sm:text-5xl"
         >
           Jon Gergen
         </Link>
         <nav aria-label="Primary">
-          <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 font-utility text-base font-medium text-ink sm:gap-x-8 sm:text-lg">
+          <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 font-utility text-lg font-medium text-ink sm:gap-x-10 sm:text-xl">
             <li>
               <details className="group relative">
                 <summary className="cursor-pointer list-none transition-colors hover:text-cloth [&::-webkit-details-marker]:hidden">
