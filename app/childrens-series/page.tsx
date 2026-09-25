@@ -19,7 +19,7 @@ export default function ChildrensSeriesPage() {
         <span className="ribbon ribbon-gilt" aria-hidden="true" />
         <div className="max-w-prose">
           <p className="font-utility text-xs uppercase tracking-[0.15em] text-ink-faint">
-            Chapter two
+            Children&apos;s series
           </p>
           <h1 className="mt-3 font-display text-3xl text-ink sm:text-4xl">
             Gene Drives
