@@ -1,6 +1,8 @@
 
+
 import type { Metadata } from "next";
 import Container from "@/components/Container";
+import PhotoSlot from "@/components/PhotoSlot";
 
 export const metadata: Metadata = {
   title: "The Lummi Tabernacle Choir",
@@ -11,6 +13,16 @@ export const metadata: Metadata = {
 export default function MemoirPage() {
   return (
     <Container className="py-16 sm:py-24">
+      <figure className="mb-12 max-w-3xl overflow-hidden rounded-sm border border-ink/10 shadow-md sm:mb-16">
+        <PhotoSlot
+          src="/images/memoir-lifeguard-chair.jpg"
+          alt="Pencil sketch of a figure sitting in a tall wooden lifeguard chair among trees"
+          width={1400}
+          height={1081}
+          priority
+        />
+      </figure>
+
       <div className="flex items-stretch gap-6">
         <span className="ribbon" aria-hidden="true" />
         <div className="max-w-prose">
