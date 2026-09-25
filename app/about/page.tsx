@@ -1,71 +1,113 @@
-import type { Metadata } from "next";
+
+import Link from "next/link";
 import Container from "@/components/Container";
-import PhotoSlot from "@/components/PhotoSlot";
-
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "About Jon Gergen, author of The Lummi Tabernacle Choir and the Gene Drives children's series.",
-};
-
-export default function AboutPage() {
+import ChapterCard from "@/components/ChapterCard";
+import NewsletterForm from "@/components/NewsletterForm";
+import HomePagePhotos from "@/components/HomePagePhotos";
+export default function HomePage() {
   return (
-    <Container className="py-16 sm:py-24">
-      <div className="grid gap-12 sm:grid-cols-[320px_1fr] sm:gap-16">
-        <div>
-          <div className="aspect-[4/5] w-full overflow-hidden rounded-sm shadow-md">
-            <PhotoSlot
-              src="/images/about-jon.jpg"
-              alt="Jon Gergen on the lake at sunset"
-              width={800}
-              height={1000}
-              priority
-            />
-          </div>
-        </div>
-        <div className="max-w-prose">
-          <h1 className="font-display text-3xl text-ink sm:text-4xl">About</h1>
-          <div className="mt-6 space-y-4 font-body text-lg text-ink-muted">
+    <>
+      <section className="border-b border-ink/10">
+        <Container className="py-20 sm:py-28">
+          <p className="font-utility text-xs uppercase tracking-[0.2em] text-ink-faint">
+            Author
+          </p>
+          <h1 className="mt-4 max-w-3xl font-display text-4xl leading-tight text-ink sm:text-6xl">
+            Jon Gergen writes the true stories and the made-up ones, in equal
+            earnest.
+          </h1>
+          <div className="mt-6 max-w-prose space-y-4 font-body text-lg text-ink-muted">
             <p>
-              I grew up in Minnesota and moved west in my twenties with a truck
-              full of books and not much of a plan. I eventually landed on
-              Gooseberry Point, a small waterfront neighborhood on the Lummi
-              Reservation in northwest Washington. I expected to stay for a
-              while. I stayed for ten years.
+              His literary memoir, <em>The Lummi Tabernacle Choir</em>, tells
+              the story of ten years on Gooseberry Point on the Lummi
+              Reservation, where an unlikely community of fishermen, drifters,
+              surrogate fathers, neighbors, and one fiercely independent dog
+              taught him something about belonging &mdash; and considerably
+              less about how to stay.
             </p>
             <p>
-              Those years became the heart of{" "}
-              <em>The Lummi Tabernacle Choir</em>, my first literary memoir.
-              It&apos;s a book about the people I knew there, but also about
-              the life I carried with me when I arrived &mdash; losing my
-              mother when I was young, growing up with an alcoholic Vietnam
-              veteran father, and learning early how to rely on myself. The
-              book follows those threads through addiction, faith, fatherhood,
-              friendship, and the complicated distance between finding a place
-              where you belong and learning how to stay.
-            </p>
-            <p>
-              For seventeen years, I owned and operated a water-delivery
-              business in Whatcom County. I later earned degrees in accounting
-              and business administration and now serve as Director of
-              Ecommerce at Barlean&apos;s. Writing came less directly. For
-              years, I accumulated stories without thinking of myself as
-              someone who would eventually put them into a book.
-            </p>
-            <p>
-              I also write for younger readers. <em>Gene Drives</em> is a
-              ten-book children&apos;s series about Gene, a boy who can drive
-              anything. Whatever the adventure, he finds a way to bring
-              everyone home.
-            </p>
-            <p>
-              I live in Ferndale, Washington. When I&apos;m not writing, I
-              play music, work on my small farm, and spend as much time
-              outdoors as I can.
+              He is also the creator of <em>Gene Drives</em>, a ten-book
+              children&apos;s series about a boy who can drive anything &mdash; and
+              bring everyone home.
             </p>
           </div>
-        </div>
-      </div>
-    </Container>
+        </Container>
+      </section>
+      <HomePagePhotos />
+      <section>
+        <Container className="grid gap-6 py-16 sm:grid-cols-2 sm:py-20">
+          <ChapterCard
+            eyebrow="Chapter one"
+            title="The Lummi Tabernacle Choir"
+            description="Ten years, one peninsula, and a neighborhood of dogs who howled back at every siren that passed."
+            href="/memoir"
+            cta="Read more"
+          />
+          <ChapterCard
+            eyebrow="Chapter two"
+            title="Gene Drives"
+            description="Gene can drive anything, and when someone's lost, stuck, or far from home, he's the one who goes to get them."
+            href="/childrens-series"
+            cta="Meet the series"
+            gilt
+          />
+        </Container>
+      </section>
+
+      <section className="border-t border-ink/10">
+        <Container className="py-16 sm:py-20">
+          <p className="font-utility text-xs uppercase tracking-[0.2em] text-ink-faint">
+            What&apos;s next
+          </p>
+          <h2 className="mt-3 font-display text-2xl text-ink sm:text-3xl">
+            <Link href="/janys-praise" className="hover:underline">
+              Jany&apos;s Praise
+            </Link>
+          </h2>
+          <p className="mt-3 max-w-prose font-body text-lg text-ink-muted">
+            A novel in progress about a girl who spends her life searching for
+            the love, belonging, and God she believes she lost.
+          </p>
+        </Container>
+      </section>
+
+      <section className="border-t border-ink/10">
+        <Container className="py-16 sm:py-20">
+          <div className="flex flex-wrap items-baseline justify-between gap-4">
+            <h2 className="font-display text-2xl text-ink sm:text-3xl">
+              Recent musings
+            </h2>
+            <Link
+              href="/musings"
+              className="font-utility text-sm font-medium text-cloth hover:underline"
+            >
+              All musings &rarr;
+            </Link>
+          </div>
+          <p className="mt-3 max-w-prose font-body text-ink-muted">
+            Shorter writing &mdash; notes, observations, and the occasional
+            story from the farm.
+          </p>
+        </Container>
+      </section>
+
+      <section className="border-t border-ink/10 bg-paper-dim/40">
+        <Container className="py-16 sm:py-20">
+          <div className="max-w-xl">
+            <h2 className="font-display text-2xl text-ink sm:text-3xl">
+              Stay in the loop
+            </h2>
+            <p className="mt-3 font-body text-ink-muted">
+              Occasional updates on the memoir&apos;s progress, the
+              children&apos;s series, and news about events or releases. No
+              spam, unsubscribe anytime.
+            </p>
+            <div className="mt-6">
+              <NewsletterForm />
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }
