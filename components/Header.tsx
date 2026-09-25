@@ -1,11 +1,12 @@
 
 
+
 import Link from "next/link";
 
 const bookLinks = [
-  { href: "/memoir", label: "The memoir" },
-  { href: "/childrens-series", label: "The children's series" },
-  { href: "/janys-praise", label: "Jany's Praise" },
+  { href: "/memoir", label: "The Lummi Tabernacle Choir", kind: "Memoir" },
+  { href: "/childrens-series", label: "Gene Drives", kind: "Children's series" },
+  { href: "/janys-praise", label: "Jany's Praise", kind: "Novel in progress" },
 ];
 
 export default function Header() {
@@ -28,14 +29,17 @@ export default function Header() {
                     &#9662;
                   </span>
                 </summary>
-                <ul className="absolute left-0 top-full z-10 mt-3 min-w-[240px] rounded-sm border border-ink/10 bg-paper py-2 shadow-sm">
+                <ul className="absolute left-0 top-full z-10 mt-3 min-w-[300px] rounded-sm border border-ink/10 bg-paper py-2 shadow-sm">
                   {bookLinks.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
                         className="block px-4 py-2 transition-colors hover:bg-paper-dim hover:text-cloth"
                       >
-                        {link.label}
+                        <span className="block">{link.label}</span>
+                        <span className="block text-sm font-normal text-ink-faint">
+                          {link.kind}
+                        </span>
                       </Link>
                     </li>
                   ))}
