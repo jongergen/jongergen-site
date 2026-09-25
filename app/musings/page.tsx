@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/Container";
@@ -32,6 +33,12 @@ export default function MusingsPage() {
           story from the farm.
         </p>
       </div>
+
+      {sorted.length === 0 && (
+        <p className="mt-12 max-w-prose font-body text-ink-muted">
+          The first pieces are on their way.
+        </p>
+      )}
 
       <div className="mt-12 max-w-prose divide-y divide-ink/10">
         {sorted.map((post) => (
