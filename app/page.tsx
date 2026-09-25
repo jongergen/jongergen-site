@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Container from "@/components/Container";
 import ChapterCard from "@/components/ChapterCard";
@@ -11,18 +12,24 @@ export default function HomePage() {
           <p className="font-utility text-xs uppercase tracking-[0.2em] text-ink-faint">
             Author
           </p>
-          {/* TODO: replace with your real tagline */}
           <h1 className="mt-4 max-w-3xl font-display text-4xl leading-tight text-ink sm:text-6xl">
             Jon Gergen writes the true stories and the made-up ones, in equal
             earnest.
           </h1>
-          {/* TODO: replace with your real one-paragraph bio */}
-          <p className="mt-6 max-w-prose font-body text-lg text-ink-muted">
-            A memoir about the life that actually happened, and a ten-book
-            series for the readers who still believe in the ones that
-            didn&apos;t &mdash; yet. This is a placeholder paragraph; swap in
-            your own introduction whenever you&apos;re ready.
-          </p>
+          <div className="mt-6 max-w-prose space-y-4 font-body text-lg text-ink-muted">
+            <p>
+              His literary memoir, <em>The Lummi Tabernacle Choir</em>, tells
+              the story of ten years on Gooseberry Point on the Lummi
+              Reservation, where an unlikely community of fishermen, drifters,
+              surrogate fathers, neighbors, and one fiercely independent dog
+              taught him something about belonging &mdash; and considerably
+              less about how to stay.
+            </p>
+            <p>
+              He is also the creator of <em>Gene Drives</em>, a ten-book
+              children&apos;s series about a boy who can drive anything.
+            </p>
+          </div>
         </Container>
       </section>
       <HomePagePhotos />
@@ -30,19 +37,36 @@ export default function HomePage() {
         <Container className="grid gap-6 py-16 sm:grid-cols-2 sm:py-20">
           <ChapterCard
             eyebrow="Chapter one"
-            title="The memoir"
-            description="A book about a real life, told the way it was actually lived. Nearly finished, and looking for the right hands to land in next."
+            title="The Lummi Tabernacle Choir"
+            description="Ten years, one peninsula, and a neighborhood of dogs who howled back at every siren that passed."
             href="/memoir"
             cta="Read more"
           />
           <ChapterCard
             eyebrow="Chapter two"
-            title="The children's series"
-            description="Ten books, one world, and a set of characters young readers will want to grow up alongside."
+            title="Gene Drives"
+            description="Gene can drive anything, and when someone's lost, stuck, or far from home, he's the one who goes to get them."
             href="/childrens-series"
             cta="Meet the series"
             gilt
           />
+        </Container>
+      </section>
+
+      <section className="border-t border-ink/10">
+        <Container className="py-16 sm:py-20">
+          <p className="font-utility text-xs uppercase tracking-[0.2em] text-ink-faint">
+            What&apos;s next
+          </p>
+          <h2 className="mt-3 font-display text-2xl text-ink sm:text-3xl">
+            <Link href="/janys-praise" className="hover:underline">
+              Jany&apos;s Praise
+            </Link>
+          </h2>
+          <p className="mt-3 max-w-prose font-body text-lg text-ink-muted">
+            A novel in progress about a girl who spends her life searching for
+            the love, belonging, and God she believes she lost.
+          </p>
         </Container>
       </section>
 
