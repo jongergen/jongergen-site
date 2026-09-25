@@ -1,9 +1,10 @@
+
 import Link from "next/link";
 
 const bookLinks = [
   { href: "/memoir", label: "The memoir" },
   { href: "/childrens-series", label: "The children's series" },
-  { href: "/in-the-works", label: "In the works" },
+  { href: "/janys-praise", label: "Jany's Praise" },
 ];
 
 export default function Header() {
