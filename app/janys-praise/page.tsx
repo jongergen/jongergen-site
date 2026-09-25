@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 
@@ -13,14 +14,11 @@ export default function JanysPraisePage() {
         <span className="ribbon" aria-hidden="true" />
         <div className="max-w-prose">
           <p className="font-utility text-xs uppercase tracking-[0.15em] text-ink-faint">
-            Chapter three
+            Novel in progress
           </p>
           <h1 className="mt-3 font-display text-3xl text-ink sm:text-4xl">
             Jany&apos;s Praise
           </h1>
-          <p className="mt-3 font-utility text-sm text-cloth">
-            A novel in progress
-          </p>
           <div className="mt-8 space-y-4 font-body text-lg text-ink-muted">
             <p>
               <em>Jany&apos;s Praise</em> is the story of a girl who spends her
