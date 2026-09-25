@@ -27,14 +27,11 @@ export default function MemoirPage() {
         <span className="ribbon" aria-hidden="true" />
         <div className="max-w-prose">
           <p className="font-utility text-xs uppercase tracking-[0.15em] text-ink-faint">
-            Chapter one
+            Literary memoir
           </p>
           <h1 className="mt-3 font-display text-3xl text-ink sm:text-4xl">
             The Lummi Tabernacle Choir
           </h1>
-          <p className="mt-3 font-utility text-sm text-cloth">
-            A literary memoir
-          </p>
 
           <div className="mt-8 space-y-4 font-body text-lg text-ink-muted">
             <p>
@@ -56,22 +53,6 @@ export default function MemoirPage() {
               question of whether you can stay somewhere that has already
               accepted you.
             </p>
-          </div>
-
-          <div className="mt-10 rounded-sm bg-paper-dim/60 p-6">
-            <h2 className="font-display text-xl text-ink">
-              For agents and publishers
-            </h2>
-            <p className="mt-2 font-body text-ink-muted">
-              A full manuscript, sample chapters, and a formal query letter
-              are available on request.
-            </p>
-            <a
-              href="/contact"
-              className="mt-4 inline-block font-utility text-sm font-medium text-cloth hover:underline"
-            >
-              Get in touch &rarr;
-            </a>
           </div>
         </div>
       </div>
