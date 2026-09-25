@@ -1,4 +1,5 @@
 
+
 import Link from "next/link";
 import Container from "@/components/Container";
 import ChapterCard from "@/components/ChapterCard";
@@ -27,7 +28,8 @@ export default function HomePage() {
             </p>
             <p>
               He is also the creator of <em>Gene Drives</em>, a ten-book
-              children&apos;s series about a boy who can drive anything.
+              children&apos;s series about a boy who can drive anything &mdash; and
+              bring everyone home.
             </p>
           </div>
         </Container>
