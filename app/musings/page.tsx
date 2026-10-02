@@ -29,9 +29,10 @@ export default function MusingsPage() {
           Musings
         </h1>
         <p className="mt-4 font-body text-lg text-ink-muted">
-          Shorter writing &mdash; notes, observations, and the occasional
-          story from the farm.
+          Shorter writing &mdash; essays, poems, and things I&rsquo;m still
+          thinking through.
         </p>
+        <div className="mt-8 h-px w-16 bg-gilt" aria-hidden="true" />
       </div>
 
       {sorted.length === 0 && (
@@ -40,7 +41,7 @@ export default function MusingsPage() {
         </p>
       )}
 
-      <div className="mt-12 max-w-prose divide-y divide-ink/10">
+      <div className="mt-14 max-w-prose divide-y divide-ink/10">
         {sorted.map((post) => (
           <Link
             key={post.slug}
