@@ -1,6 +1,7 @@
 
 
 
+
 export type Post = {
   slug: string;
   title: string;
@@ -27,6 +28,46 @@ export type Post = {
 //    ],
 //  },
 export const posts: Post[] = [
+  {
+    slug: "what-the-touch-is-saying",
+    title: "What the Touch Is Saying",
+    date: "2026-10-02",
+    topic: "Life",
+    excerpt: "The touch feels good, but what matters more to me is what the touch is saying.",
+    body: [
+      "I really desire physical affection. I like hugging, snuggling, spooning, resting my head against someone's shoulder, and feeling someone rest her head against mine.",
+      "Some time ago, something caused me to question that desire in a way I never had before. I was confronted with the possibility that my desire for physical closeness might come from some unmet childhood need—that perhaps I was trying to reclaim something I hadn't received as a child.",
+      "The idea hurt more than I expected it to.",
+      "Maybe because something I had always considered tender and ordinary suddenly felt like evidence that something was wrong with me. Physical affection had always felt adult and mutual to me—two people expressing love, trust, desire, or simply the wish to be close. Seeing that same desire as a child in me reaching for something he had never received made me question something about myself I had never thought needed questioning.",
+      "Or maybe because there was enough truth in it to make me wonder.",
+      "I had, after all, lost my mother when I was three years old.",
+      "It was probably the most consequential event of my life, even though I was too young to understand what had happened. Her death sent my life down a road completely different from the one I would have traveled had she lived. What that other road might have looked like is impossible to know.",
+      "It seems likely that I have some unmet childhood needs.",
+      "But who doesn't?",
+      "Maybe yours came from a parent who wasn't affectionate. Maybe you were bullied, overlooked, abandoned, criticized too much or praised too little. Maybe you grew up surrounded by love and still came away needing something you didn't get. Childhood isn't something any of us emerges from with every need perfectly met.",
+      "And more importantly, how could we ever know definitively what is an unmet childhood need and what is simply a normal adult need?",
+      "I can understand why viewing physical affection through the lens of an unmet childhood need might make it feel different. It could begin to seem parental rather than romantic. Holding someone might no longer look like two adults seeking closeness, but like one adult being asked to comfort the child still living somewhere inside the other. I can understand why that distinction might matter.",
+      "But that's not how I experience it. When I put my head on someone's shoulder, I don't feel like a three-year-old looking for his mother. I feel like a grown man who loves being close to another human being.",
+      "And yet maybe that distinction is too easy. Maybe some small part of that three-year-old is there when I put my head on someone's shoulder. I don't know. That's the problem with trying to draw a line between the child we were and the adult we became. I'm not sure there is one.",
+      "The more I've thought about it, the less certain I am that the distinction even matters.",
+      "Of course, where our needs come from can matter. Childhood wounds can follow us into adulthood in ways that hurt us and the people around us, and those are worth understanding. But wanting something because you once lacked it doesn't automatically make the wanting unhealthy.",
+      "I can't completely separate the child from the adult in me, nor am I sure I should try. The three-year-old who lost his mother didn't disappear when I turned eighteen. He grew up. His loss grew up with him. It became part of me, along with everything else that happened in the years that followed.",
+      "Maybe some of my desire for affection began there. Maybe all of it did. Maybe none of it did. I'll never know.",
+      "We all carry our childhoods with us. They shape what frightens us, what comforts us, what makes us feel safe, and probably the ways we give and receive love. If I enjoy resting my head against someone's shoulder, does it matter whether some psychologist could trace that desire back fifty years? Would knowing its origin make the comfort I feel today any less real?",
+      "I don't think so.",
+      "There is something wonderfully simple about physical affection. A hand resting on your back. Someone leaning against you on the couch. A long hug from someone who doesn't seem anxious to let go. Falling asleep with another person pressed against you.",
+      "And I like both sides of it. I love resting my head against someone's shoulder, but I love feeling someone rest her head against me just as much. There is something deeply satisfying about that small gesture of vulnerability. It feels like trust. Like she feels safe with me. Like, for that moment, I am someone she can let her guard down with.",
+      "I've also come to realize that maybe the physical sensation isn't even what I desire most.",
+      "It's the intention behind it.",
+      "A hand reaches for mine because someone wants to hold it. A head settles onto my shoulder because that's where someone wants to be. An embrace lasts a few seconds longer because neither person is quite ready to let go.",
+      "The touch feels good, but what matters more to me is what the touch is saying.",
+      "I want to be close to you.",
+      "Maybe that's what I've been looking for all along.",
+      "All I know is that if I lacked affection and closeness as a child, I sure the hell am going to try to find it as an adult.",
+      "I want to hug someone I love. I want to spoon on the couch. I want to rest my head against someone's shoulder and have someone rest hers against mine. I want that special connectedness that doesn't need to be explained or diagnosed. I don't need to know which part of me is asking for it.",
+      "Sometimes a person just wants to be held.",
+    ],
+  },
   {
     slug: "bear-witness",
     title: "Bear Witness",
