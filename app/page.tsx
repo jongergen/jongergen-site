@@ -1,19 +1,16 @@
 
-
-
-
 import Link from "next/link";
 import Container from "@/components/Container";
 import ChapterCard from "@/components/ChapterCard";
 import HomePagePhotos from "@/components/HomePagePhotos";
 import NewsletterForm from "@/components/NewsletterForm";
+
 export default function HomePage() {
   return (
     <>
       <HomePagePhotos />
       <section className="border-b border-ink/10">
         <Container className="pt-10 pb-20 sm:pt-14 sm:pb-28">
-          
           <h1 className="mt-0 max-w-3xl font-display text-4xl leading-tight text-ink sm:text-6xl">
             Jon Gergen writes the true stories and the made-up ones, in equal
             earnest.
@@ -60,16 +57,38 @@ export default function HomePage() {
           <p className="font-utility text-xs uppercase tracking-[0.2em] text-ink-faint">
             What&apos;s next
           </p>
-          <h2 className="mt-3 font-display text-2xl text-ink sm:text-3xl">
-            <Link href="/janys-praise" className="hover:underline">
-              Jany&apos;s Praise
-            </Link>
-          </h2>
-          <p className="mt-3 max-w-prose font-body text-lg text-ink-muted">
-            A novel in progress about a girl searching for the love, belonging,
-            and God she believes she lost &mdash; and a diary that may change
-            what she understands about all three.
-          </p>
+          <div className="mt-3 grid gap-10 sm:grid-cols-2">
+            <div>
+              <h2 className="font-display text-2xl text-ink sm:text-3xl">
+                <Link href="/janys-praise" className="hover:underline">
+                  Jany&apos;s Praise
+                </Link>
+              </h2>
+              <p className="mt-1 font-utility text-sm text-ink-faint">
+                Novel in progress
+              </p>
+              <p className="mt-3 max-w-prose font-body text-lg text-ink-muted">
+                A girl searches for the love, belonging, and God she believes
+                she lost &mdash; and a diary may change what she understands
+                about all three.
+              </p>
+            </div>
+            <div>
+              <h2 className="font-display text-2xl text-ink sm:text-3xl">
+                <Link href="/mabels-circus" className="hover:underline">
+                  Mabel&apos;s Circus
+                </Link>
+              </h2>
+              <p className="mt-1 font-utility text-sm text-ink-faint">
+                Children&apos;s series in progress
+              </p>
+              <p className="mt-3 max-w-prose font-body text-lg text-ink-muted">
+                Ten-year-old Mabel grows up aboard a traveling circus with an
+                unusual gift for understanding animals. Created with his
+                eight-year-old son, Eli.
+              </p>
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -100,8 +119,8 @@ export default function HomePage() {
               Stay in the loop
             </h2>
             <p className="mt-3 font-body text-ink-muted">
-              News about the memoir, Gene Drives, and Jany&apos;s Praise
-              &mdash; only when there&apos;s something worth telling.
+              News about the memoir, the children&apos;s books, and Jany&apos;s
+              Praise &mdash; only when there&apos;s something worth telling.
             </p>
             <div className="mt-6">
               <NewsletterForm />
