@@ -78,7 +78,7 @@ export default function HomePage() {
               <Link
                 key={post.slug}
                 href={`/musings/${post.slug}`}
-                className="group block border-t-2 border-gilt pt-5"
+                className="group block"
               >
                 <p className="font-utility text-sm text-ink-faint">
                   {post.topic}
