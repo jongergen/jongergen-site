@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -38,10 +39,10 @@ export default function Header() {
     <header className="border-b border-ink/10">
       <div className="mx-auto flex max-w-page flex-col items-start gap-4 px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-10">
         <Link href="/" className="flex flex-col">
-          <span className="font-display text-4xl font-semibold tracking-tight text-cloth sm:text-5xl">
+          <span className="font-display text-4xl font-semibold tracking-tight text-cloth sm:text-5xl lg:text-6xl">
             Jon Gergen
           </span>
-          <span className="mt-1 font-utility text-sm tracking-[0.12em] text-ink-faint">
+          <span className="mt-1.5 font-utility text-base tracking-[0.12em] text-ink-muted">
             Author
           </span>
         </Link>
@@ -55,7 +56,7 @@ export default function Header() {
                   )}`}
                 >
                   Books
-                  <span className="ml-1.5 inline-block text-xs transition-transform group-open:rotate-180">
+                  <span className="ml-1 inline-block align-middle text-sm transition-transform group-open:rotate-180">
                     &#9662;
                   </span>
                 </summary>
