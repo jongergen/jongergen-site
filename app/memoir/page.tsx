@@ -31,7 +31,9 @@ export default function MemoirPage() {
           <h1 className="mt-3 font-display text-3xl text-ink sm:text-4xl">
             The Lummi Tabernacle Choir
           </h1>
-
+<p className="mt-2 font-display text-xl italic text-ink-muted">
+  A Memoir of Belonging
+</p>
           <div className="mt-8 space-y-4 font-body text-lg text-ink-muted">
             <p>
               On Gooseberry Point, whenever a siren wailed down the road, every
