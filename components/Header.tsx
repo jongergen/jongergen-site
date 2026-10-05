@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -8,6 +9,7 @@ const bookLinks = [
   { href: "/memoir", label: "The Lummi Tabernacle Choir", kind: "Memoir" },
   { href: "/childrens-series", label: "Gene Drives", kind: "Children's series" },
   { href: "/janys-praise", label: "Jany's Praise", kind: "Novel in progress" },
+  { href: "/mabels-circus", label: "Mabel's Circus", kind: "Children's series in progress" },
 ];
 
 const pageLinks = [
