@@ -1,11 +1,15 @@
-
 import Link from "next/link";
 import Container from "@/components/Container";
 import ChapterCard from "@/components/ChapterCard";
 import HomePagePhotos from "@/components/HomePagePhotos";
 import NewsletterForm from "@/components/NewsletterForm";
+import { posts } from "@/lib/posts";
 
 export default function HomePage() {
+  const latestPosts = [...posts]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
+
   return (
     <>
       <HomePagePhotos />
@@ -54,6 +58,46 @@ export default function HomePage() {
 
       <section className="border-t border-ink/10">
         <Container className="py-16 sm:py-20">
+          <div className="flex flex-wrap items-baseline justify-between gap-4">
+            <h2 className="font-display text-2xl text-ink sm:text-3xl">
+              Recent musings
+            </h2>
+            <Link
+              href="/musings"
+              className="font-utility text-sm font-medium text-cloth hover:underline"
+            >
+              All musings &rarr;
+            </Link>
+          </div>
+          <p className="mt-3 max-w-prose font-body text-ink-muted">
+            Shorter writing &mdash; essays, poems, and things I&rsquo;m still
+            thinking through.
+          </p>
+          <div className="mt-10 grid gap-10 md:grid-cols-3">
+            {latestPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/musings/${post.slug}`}
+                className="group block border-t-2 border-gilt pt-5"
+              >
+                <p className="font-utility text-sm text-ink-faint">
+                  {post.topic}
+                </p>
+                <h3 className="mt-2 font-display text-xl text-ink group-hover:text-cloth sm:text-2xl">
+                  {post.title}
+                </h3>
+                <p className="mt-2 font-body text-ink-muted">{post.excerpt}</p>
+                <p className="mt-3 font-utility text-sm font-medium text-cloth group-hover:underline">
+                  Read
+                </p>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-ink/10">
+        <Container className="py-16 sm:py-20">
           <p className="font-utility text-xs uppercase tracking-[0.2em] text-ink-faint">
             What&apos;s next
           </p>
@@ -89,26 +133,6 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-        </Container>
-      </section>
-
-      <section className="border-t border-ink/10">
-        <Container className="py-16 sm:py-20">
-          <div className="flex flex-wrap items-baseline justify-between gap-4">
-            <h2 className="font-display text-2xl text-ink sm:text-3xl">
-              Recent musings
-            </h2>
-            <Link
-              href="/musings"
-              className="font-utility text-sm font-medium text-cloth hover:underline"
-            >
-              All musings &rarr;
-            </Link>
-          </div>
-          <p className="mt-3 max-w-prose font-body text-ink-muted">
-            Shorter writing &mdash; notes, observations, and the occasional
-            story from the farm.
-          </p>
         </Container>
       </section>
 
