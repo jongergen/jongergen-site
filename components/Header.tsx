@@ -55,7 +55,7 @@ export default function Header() {
                   )}`}
                 >
                   Books
-                  <span className="ml-1 inline-block text-xs transition-transform group-open:rotate-180">
+                  <span className="ml-1.5 inline-block text-xs transition-transform group-open:rotate-180">
                     &#9662;
                   </span>
                 </summary>
