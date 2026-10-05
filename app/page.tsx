@@ -12,7 +12,7 @@ export default function HomePage() {
     <>
       <HomePagePhotos />
       <section className="border-b border-ink/10">
-        <Container className="py-20 sm:py-28">
+        <Container className="pt-10 pb-20 sm:pt-14 sm:pb-28">
           
           <h1 className="mt-0 max-w-3xl font-display text-4xl leading-tight text-ink sm:text-6xl">
             Jon Gergen writes the true stories and the made-up ones, in equal
