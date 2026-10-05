@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -21,10 +20,43 @@ export default function Header() {
   const pathname = usePathname();
   const booksMenu = useRef<HTMLDetailsElement>(null);
 
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const closeMenu = () => {
+    if (booksMenu.current) booksMenu.current.open = false;
+  };
+
   // Close the Books dropdown whenever the page changes
   useEffect(() => {
-    if (booksMenu.current) booksMenu.current.open = false;
+    closeMenu();
   }, [pathname]);
+
+  // Close the Books dropdown on a click elsewhere or the Esc key
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (booksMenu.current && !booksMenu.current.contains(e.target as Node)) {
+        closeMenu();
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMenu();
+    };
+    document.addEventListener("click", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("click", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, []);
+
+  // Close shortly after the mouse leaves the menu (the pause lets
+  // the pointer cross the small gap between "Books" and the list)
+  const handleMouseLeave = () => {
+    closeTimer.current = setTimeout(closeMenu, 300);
+  };
+  const handleMouseEnter = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  };
 
   const isActive = (href: string) => pathname.startsWith(href);
   const onBookPage = bookLinks.some((link) => isActive(link.href));
@@ -49,7 +81,12 @@ export default function Header() {
         <nav aria-label="Primary">
           <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 font-utility text-lg font-medium text-ink sm:gap-x-10 sm:text-xl">
             <li>
-              <details ref={booksMenu} className="group relative">
+              <details
+                ref={booksMenu}
+                className="group relative"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
                 <summary
                   className={`cursor-pointer list-none [&::-webkit-details-marker]:hidden ${linkClass(
                     onBookPage
