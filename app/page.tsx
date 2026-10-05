@@ -98,10 +98,10 @@ export default function HomePage() {
 
       <section className="border-t border-ink/10">
         <Container className="py-16 sm:py-20">
-          <p className="font-utility text-xs uppercase tracking-[0.2em] text-ink-faint">
-            What&apos;s next
-          </p>
-          <div className="mt-3 grid gap-10 sm:grid-cols-2">
+             <h2 className="font-display text-2xl text-ink sm:text-3xl">
+     What&apos;s next
+   </h2>
+          <div className="mt-8 grid gap-10 sm:grid-cols-2">
             <div>
               <h2 className="font-display text-2xl text-ink sm:text-3xl">
                 <Link href="/janys-praise" className="hover:underline">
