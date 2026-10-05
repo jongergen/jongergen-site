@@ -2,17 +2,20 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 /*
   NAVIGATION
   ------------------------
   Desktop: full horizontal list of all six links.
-  Mobile (narrow screens): collapses into a hamburger menu.
+  Mobile/tablet: collapses into a hamburger menu.
 
-  Labels use "type" (The Memoir, The Children's Series) rather than
-  book titles, since a first-time visitor recognizes a category faster
-  than an unfamiliar title. Jany's Praise uses its actual title since
-  it's a single, nameable work with no ambiguity to resolve.
+  The name uses the site's display font (Fraunces) with a small
+  "Author" line beneath it. Colors and fonts use the same design
+  tokens as the rest of the site (ink, cloth, font-display, etc.).
+
+  The current page's link is marked with a small cloth-green
+  underline, echoing the ribbon-bookmark motif.
 */
 
 const NAV_LINKS = [
@@ -26,55 +29,81 @@ const NAV_LINKS = [
 
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <nav className="w-full border-b border-stone-200 bg-white relative z-50">
-      <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="font-serif text-xl tracking-wide text-emerald-900">
-          Jon Gergen
+    <nav className="relative z-50 w-full border-b border-ink/10 bg-paper">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
+        {/* Name + tagline */}
+        <Link href="/" className="group flex flex-col">
+          <span className="font-display text-2xl leading-none text-ink sm:text-3xl">
+            Jon Gergen
+          </span>
+          <span className="mt-1.5 font-utility text-xs tracking-[0.12em] text-ink-faint">
+            Author
+          </span>
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex gap-8">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="text-stone-700 hover:text-emerald-900 transition-colors font-sans text-sm tracking-wide"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+        <ul className="hidden gap-7 lg:flex">
+          {NAV_LINKS.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`border-b-2 pb-1 font-utility text-[15px] font-medium transition-colors ${
+                    active
+                      ? "border-cloth text-cloth"
+                      : "border-transparent text-ink hover:text-cloth"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Mobile hamburger button */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="flex flex-col gap-1.5 p-2 lg:hidden"
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <span className="w-6 h-0.5 bg-stone-800" />
-          <span className="w-6 h-0.5 bg-stone-800" />
-          <span className="w-6 h-0.5 bg-stone-800" />
+          <span className="h-0.5 w-6 bg-ink" />
+          <span className="h-0.5 w-6 bg-ink" />
+          <span className="h-0.5 w-6 bg-ink" />
         </button>
       </div>
 
       {/* Mobile dropdown menu */}
       {menuOpen && (
-        <ul className="md:hidden flex flex-col border-t border-stone-200 bg-white">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="block px-6 py-3 text-stone-700 hover:bg-stone-50 font-sans text-sm"
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+        <ul className="flex flex-col border-t border-ink/10 bg-paper lg:hidden">
+          {NAV_LINKS.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`block border-l-4 px-6 py-3 font-utility text-base font-medium ${
+                    active
+                      ? "border-cloth text-cloth"
+                      : "border-transparent text-ink hover:bg-paper-dim/40"
+                  }`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       )}
     </nav>
