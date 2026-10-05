@@ -1,6 +1,5 @@
-
-
 import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/components/Container";
 import PhotoSlot from "@/components/PhotoSlot";
 
@@ -54,6 +53,13 @@ export default function MemoirPage() {
               accepted you.
             </p>
           </div>
+
+          <Link
+            href="/memoir/prologue"
+            className="mt-10 inline-block border border-[#B08D3C] px-6 py-3 font-utility text-sm text-ink transition-colors hover:bg-[#B08D3C]/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B08D3C]"
+          >
+            Read the prologue
+          </Link>
         </div>
       </div>
     </Container>
