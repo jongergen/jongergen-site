@@ -10,7 +10,7 @@ import PhotoSlot from "./PhotoSlot";
 
 export default function HomePagePhotos() {
   return (
-    <div className="relative h-[42vh] min-h-[260px] w-full overflow-hidden sm:h-[60vh] sm:max-h-[720px]">
+    <div className="relative h-[42vh] min-h-[260px] w-full overflow-hidden sm:h-[48vh] sm:max-h-[560px]">
       <PhotoSlot
         src="/images/home-hero.jpg"
         alt="A fishing rod bent against a sunrise over the water"
