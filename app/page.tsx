@@ -118,7 +118,7 @@ export default function HomePage() {
               </p>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-ink sm:text-3xl">
+              <h3 className="font-display text-xl text-ink sm:text-2xl">
                 <Link href="/mabels-circus" className="hover:underline">
                   Mabel&apos;s Circus
                 </Link>
@@ -139,7 +139,7 @@ export default function HomePage() {
       <section className="border-t border-ink/10 bg-paper-dim/40">
         <Container className="py-16 sm:py-20">
           <div className="max-w-xl">
-            <h2 className="font-display text-2xl text-ink sm:text-3xl">
+            <h3 className="font-display text-xl text-ink sm:text-2xl">
               Stay in the loop
             </h2>
             <p className="mt-3 font-body text-ink-muted">
