@@ -40,14 +40,8 @@ export default function MusingPostPage({
 
   return (
     <Container className="py-16 sm:py-24">
-      <div
-        className={
-          post.image
-            ? "lg:grid lg:grid-cols-[minmax(0,42rem)_22rem] lg:justify-between lg:gap-12 xl:grid-cols-[minmax(0,42rem)_26rem]"
-            : ""
-        }
-      >
-        <article className="max-w-prose">
+      <article>
+        <header className="max-w-prose">
           <Link
             href="/musings"
             className="font-utility text-sm text-cloth hover:underline"
@@ -62,39 +56,29 @@ export default function MusingPostPage({
           <h1 className="mt-3 font-display text-3xl text-ink sm:text-4xl">
             {post.title}
           </h1>
-          {post.image && (
-            <div className="mt-10 overflow-hidden rounded-lg shadow-md lg:hidden">
-              <PhotoSlot
-                src={post.image.src}
-                alt={post.image.alt}
-                width={post.image.width}
-                height={post.image.height}
-                priority
-              />
-            </div>
-          )}
-          <div className="mt-12 space-y-6 font-body text-lg text-ink-muted sm:mt-16">
-            {post.body.map((paragraph, i) => (
-              <p key={i} className="whitespace-pre-line">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </article>
+        </header>
 
         {post.image && (
-          <aside className="hidden lg:block" aria-label="Photo">
-            <div className="sticky top-24 mt-2 overflow-hidden rounded-lg shadow-md">
-              <PhotoSlot
-                src={post.image.src}
-                alt={post.image.alt}
-                width={post.image.width}
-                height={post.image.height}
-              />
-            </div>
-          </aside>
+          <div className="mt-10 overflow-hidden rounded-lg shadow-md sm:mt-12 lg:aspect-[2/1]">
+            <PhotoSlot
+              src={post.image.src}
+              alt={post.image.alt}
+              width={post.image.width}
+              height={post.image.height}
+              className="h-full w-full"
+              priority
+            />
+          </div>
         )}
-      </div>
+
+        <div className="mt-12 max-w-prose space-y-6 font-body text-lg text-ink-muted sm:mt-16">
+          {post.body.map((paragraph, i) => (
+            <p key={i} className="whitespace-pre-line">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </article>
     </Container>
   );
 }
