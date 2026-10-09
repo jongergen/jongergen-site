@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Container from "@/components/Container";
+import PhotoSlot from "@/components/PhotoSlot";
 import { posts } from "@/lib/posts";
 
 export function generateStaticParams() {
@@ -39,29 +40,61 @@ export default function MusingPostPage({
 
   return (
     <Container className="py-16 sm:py-24">
-      <article className="max-w-prose">
-        <Link
-          href="/musings"
-          className="font-utility text-sm text-cloth hover:underline"
-        >
-          &larr; All musings
-        </Link>
-        <div className="mt-6 flex items-center gap-3 font-utility text-xs uppercase tracking-[0.15em] text-ink-faint">
-          <span>{formatDate(post.date)}</span>
-          <span aria-hidden="true">&middot;</span>
-          <span>{post.topic}</span>
-        </div>
-        <h1 className="mt-3 font-display text-3xl text-ink sm:text-4xl">
-          {post.title}
-        </h1>
-        <div className="mt-12 space-y-6 font-body text-lg text-ink-muted sm:mt-16">
-          {post.body.map((paragraph, i) => (
-            <p key={i} className="whitespace-pre-line">
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </article>
+      <div
+        className={
+          post.image
+            ? "lg:grid lg:grid-cols-[minmax(0,42rem)_18rem] lg:justify-between lg:gap-16"
+            : ""
+        }
+      >
+        <article className="max-w-prose">
+          <Link
+            href="/musings"
+            className="font-utility text-sm text-cloth hover:underline"
+          >
+            &larr; All musings
+          </Link>
+          <div className="mt-6 flex items-center gap-3 font-utility text-xs uppercase tracking-[0.15em] text-ink-faint">
+            <span>{formatDate(post.date)}</span>
+            <span aria-hidden="true">&middot;</span>
+            <span>{post.topic}</span>
+          </div>
+          <h1 className="mt-3 font-display text-3xl text-ink sm:text-4xl">
+            {post.title}
+          </h1>
+          {post.image && (
+            <div className="mt-10 overflow-hidden rounded-lg shadow-md lg:hidden">
+              <PhotoSlot
+                src={post.image.src}
+                alt={post.image.alt}
+                width={post.image.width}
+                height={post.image.height}
+                priority
+              />
+            </div>
+          )}
+          <div className="mt-12 space-y-6 font-body text-lg text-ink-muted sm:mt-16">
+            {post.body.map((paragraph, i) => (
+              <p key={i} className="whitespace-pre-line">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </article>
+
+        {post.image && (
+          <aside className="hidden lg:block" aria-label="Photo">
+            <div className="sticky top-24 mt-2 overflow-hidden rounded-lg shadow-md">
+              <PhotoSlot
+                src={post.image.src}
+                alt={post.image.alt}
+                width={post.image.width}
+                height={post.image.height}
+              />
+            </div>
+          </aside>
+        )}
+      </div>
     </Container>
   );
 }

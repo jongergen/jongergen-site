@@ -11,6 +11,14 @@ export type Post = {
   topic: string; // e.g. "Writing", "Farm", "Life"
   excerpt: string;
   body: string[]; // one paragraph per array entry
+  // Optional photo. Sits to the right of the musing on wide screens and
+  // just under the title on phones. Upload the file to /public/images/.
+  image?: {
+    src: string; // e.g. "/images/musing-garlic.jpg"
+    alt: string; // short description of the photo
+    width: number;
+    height: number;
+  };
 };
 
 // To add a post, copy the example below into the list, give it a unique
@@ -36,6 +44,12 @@ export const posts: Post[] = [
     date: "2026-10-09",
     topic: "Farm",
     excerpt: "I am, after all, the Garlic Man. Nobody else calls me that, but I have a reputation to keep.",
+    image: {
+      src: "/images/musings-page-bottom.jpg",
+      alt: "Rows of young garlic in a field, with an old tractor beyond",
+      width: 1200,
+      height: 900,
+    },
     body: [
       "Recently I was on vacation in British Columbia. I wasn't allowed to bring my garlic across the border.",
       "Fifteen years of careful growing, and I was treated like a smuggler.",
@@ -173,6 +187,12 @@ export const posts: Post[] = [
     date: "2026-10-06",
     topic: "Farm",
     excerpt: "Nature seems willing to tolerate an astonishing amount of male foolishness to keep the species going.",
+    image: {
+      src: "/images/musing-intact-males.jpg",
+      alt: "Archie, a shaggy Highland bull with long horns, standing in the snow",
+      width: 1200,
+      height: 900,
+    },
     body: [
       "Nature seems willing to tolerate an astonishing amount of male foolishness to keep the species going.",
       "I know this, in part, because over about ten years I raised and bred a variety of farm animals: chickens, ducks, geese, turkeys, goats, cattle, pigs, and, for about a year, even a yak. After all that time, I reached one fairly simple conclusion.",
