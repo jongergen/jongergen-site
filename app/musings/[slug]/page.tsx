@@ -43,7 +43,7 @@ export default function MusingPostPage({
       <div
         className={
           post.image
-            ? "lg:grid lg:grid-cols-[minmax(0,42rem)_18rem] lg:justify-between lg:gap-16"
+            ? "lg:grid lg:grid-cols-[minmax(0,42rem)_22rem] lg:justify-between lg:gap-12 xl:grid-cols-[minmax(0,42rem)_26rem]"
             : ""
         }
       >
