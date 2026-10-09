@@ -44,7 +44,7 @@ export default function MusingPostPage({
         <header className="max-w-prose">
           <Link
             href="/musings"
-            className="font-utility text-sm text-cloth hover:underline"
+            className="font-utility text-base font-medium text-cloth hover:underline sm:text-lg"
           >
             &larr; All musings
           </Link>

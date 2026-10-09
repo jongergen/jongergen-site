@@ -64,7 +64,7 @@ export default function HomePage() {
             </h2>
             <Link
               href="/musings"
-              className="font-utility text-sm font-medium text-cloth hover:underline"
+              className="font-utility text-base font-medium text-cloth hover:underline sm:text-lg"
             >
               All musings &rarr;
             </Link>
