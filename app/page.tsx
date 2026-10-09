@@ -87,7 +87,7 @@ export default function HomePage() {
                   {post.title}
                 </h3>
                 <p className="mt-2 font-body text-ink-muted">{post.excerpt}</p>
-                <p className="mt-3 font-utility text-sm font-medium text-cloth group-hover:underline">
+                <p className="mt-3 font-utility text-base font-medium text-cloth group-hover:underline sm:text-lg">
                   Read
                 </p>
               </Link>
