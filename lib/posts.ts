@@ -118,6 +118,12 @@ export const posts: Post[] = [
     date: "2026-10-06",
     topic: "Faith",
     excerpt: "I believe in God for many of the same reasons other people don't.",
+    image: {
+      src: "/images/musing-grace-comes-first.jpg",
+      alt: "Stained glass window of Jesus welcoming and blessing the children",
+      width: 1400,
+      height: 700,
+    },
     body: [
       "I believe in God for many of the same reasons other people don't.",
       "Suffering. Disease. Natural disasters. War. Betrayal. Child abuse. Rape. Senseless death.",
